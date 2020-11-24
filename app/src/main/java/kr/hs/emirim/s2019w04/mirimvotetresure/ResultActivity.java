@@ -15,7 +15,6 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class ResultActivity extends AppCompatActivity {
-    int max;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +28,17 @@ public class ResultActivity extends AppCompatActivity {
         RatingBar[] ratingBars = new RatingBar[imgNames.length];
         int[] textIds = {R.id.text1,R.id.text2,R.id.text3,R.id.text4,R.id.text5,R.id.text6, R.id.text7, R.id.text8, R.id.text9};
         int[] ratingIds = {R.id.rating_bar1, R.id.rating_bar2, R.id.rating_bar3, R.id.rating_bar4, R.id.rating_bar5, R.id.rating_bar6, R.id.rating_bar7, R.id.rating_bar8, R.id.rating_bar9};
+        int[] imageFileId = {R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e, R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.i};
 
-        TextView winner = (TextView) findViewById(R.id.winner);
-        ImageView winnerImage = (ImageView) findViewById(R.id.winnerImage);
-        for(int i= 1; i<voteCount.length; i++){
-            if(voteCount[max] < voteCount[i])
-                max = i;
+        int max = 0;
+        int maxIndex = 0;
+
+        for (int i = 0; i<imgNames.length; i++){
+            if(voteCount[i] > max){
+                max = voteCount[i];
+                maxIndex = i;
+            }
         }
-        winner.setText(imgNames[max]);
-        winnerImage.setImageResource(voteCount[max]);
 
         for(int i=0; i<imgNames.length; i++){
             textVs[i] = findViewById(textIds[i]);
@@ -46,10 +47,16 @@ public class ResultActivity extends AppCompatActivity {
             textVs[i].setText(imgNames[i]);
             ratingBars[i].setRating((float)voteCount[i]);
         }
-        Button btnBack = findViewById(R.id.btn_back);
-        btnBack.setOnClickListener(new View.OnClickListener() {
+
+        TextView textView = findViewById(R.id.result_imgName);
+        textView.setText(imgNames[maxIndex]);
+        ImageView imageView=findViewById(R.id.result_img);
+        imageView.setImageResource(imageFileId[maxIndex]);
+
+        Button btnBack=findViewById(R.id.btn_back);
+        btnBack.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 finish();
             }
         });

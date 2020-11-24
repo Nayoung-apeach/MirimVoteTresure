@@ -8,10 +8,33 @@
     android:stretchColumns="0"
     android:padding="10dp"
     tools:context=".ResultActivity">
+    <TextView
+        android:id="@+id/result_imgName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="선택된 사람 이름"
+        />
+    <ImageView
+        android:id="@+id/result_img"
+        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/a"
+        />
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         >
+        <TextView
+            android:id="@+id/text_max_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            />
         <TextView
             android:id="@+id/text1"
             android:layout_width="wrap_content"
