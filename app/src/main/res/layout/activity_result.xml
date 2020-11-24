@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:stretchColumns="0"
+    android:padding="10dp"
     tools:context=".ResultActivity">
     <TableRow
         android:layout_width="match_parent"
@@ -169,6 +170,9 @@
             android:layout_gravity="right"
             style="?android:attr/ratingBarStyleIndicator"/>
     </TableRow>
+
+
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -181,4 +185,24 @@
             android:text="돌아가기"
             android:textSize="15sp"/>
     </TableRow>
-</TableLayout>
+
+    <TableRow>
+    <TextView
+        android:id="@+id/winner"
+        android:layout_gravity="center"
+        android:layout_span="2"
+        android:text="우승한 사람"
+        android:textSize="15dp"
+        />
+    </TableRow>
+    <TableRow>
+        <ImageView
+            android:id="@+id/winnerImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_span="2"
+            android:src="@drawable/g"
+            />
+    </TableRow>
+</TableRow>
