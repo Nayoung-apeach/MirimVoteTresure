@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:stretchColumns="0"
-    android:padding="10dp"
     tools:context=".ResultActivity">
     <TextView
         android:id="@+id/result_imgName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="선택된 사람 이름"
+        android:text="선택된 그림 이름"
         />
     <ImageView
         android:id="@+id/result_img"
@@ -24,17 +23,11 @@
         android:layout_marginBottom="20dp"
         android:src="@drawable/a"
         />
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         >
-        <TextView
-            android:id="@+id/text_max_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            />
         <TextView
             android:id="@+id/text1"
             android:layout_width="wrap_content"
@@ -193,9 +186,6 @@
             android:layout_gravity="right"
             style="?android:attr/ratingBarStyleIndicator"/>
     </TableRow>
-
-
-
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -208,24 +198,4 @@
             android:text="돌아가기"
             android:textSize="15sp"/>
     </TableRow>
-
-    <TableRow>
-    <TextView
-        android:id="@+id/winner"
-        android:layout_gravity="center"
-        android:layout_span="2"
-        android:text="우승한 사람"
-        android:textSize="15dp"
-        />
-    </TableRow>
-    <TableRow>
-        <ImageView
-            android:id="@+id/winnerImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_span="2"
-            android:src="@drawable/g"
-            />
-    </TableRow>
-</TableRow>
+</TableLayout>
